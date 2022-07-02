@@ -1,5 +1,6 @@
 // Задача 47: Задайте двумерный массив размером m×n, заполненный случайными вещественными числами, 
 // округлёнными до одного знака.
+/*
 Console.WriteLine();
 double[,] array = new double[4,4];
 Random rand = new Random();
@@ -20,4 +21,4 @@ for (int i = 0; i < array.GetLength(0); i++)
     Console.WriteLine();
     Console.WriteLine();
 }
-
+*/
