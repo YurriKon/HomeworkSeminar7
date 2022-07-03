@@ -3,24 +3,33 @@
 
 Console.WriteLine();
 
+int[,] array = new int[4,5];
+Random rand = new Random();
+
+FillArray(array);
+PrintArray(array);
+Calculation(array);
+
 void FillArray(int[,] array)
 {
-for (int i = 0; i < array.GetLength(0); i++)
-{
-    for (column = 0; column < array.GetLength(1); column++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        array[row,column] = rand.Next(1, 100);
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i,j] = rand.Next(1, 100);
+        }
     }
-}
 }
 
 void PrintArray(int[,] array)
 {
-    for (int row = 0; row < array.GetLength(0); row++)
+    Console.WriteLine("Заданный массив:");
+    Console.WriteLine();
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int column = 0; column < array.GetLength(1); column++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[row,column] + "\t");
+            Console.Write(array[i,j] + "\t");
         }
         Console.WriteLine();
         Console.WriteLine();
@@ -29,7 +38,16 @@ void PrintArray(int[,] array)
 
 void Calculation(int[,] array)
 {
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        double sum = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sum += array[i,j];
 
+        }
+        double aver;
+        aver = (double)(sum/array.GetLength(0));
+        Console.Write(Math.Round(aver, 2) + "\t");
+    }
 }
-
-
